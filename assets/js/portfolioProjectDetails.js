@@ -16,45 +16,24 @@ const projectText = {
 		title: "Not Mario - Portfolio Game 1",
 		description: "'More Games in C++' Portfolio Game 1 - 'Not Mario'. This project served to introduce us to the ASGE game engine and developing in C++. I am happy with how the project ended up as it taught me a great deal about modern C++ programming. Specifically, 'frameworks,' 'tools and middleware,' and 'object orientation.'<br><br> Using Tiled as middleware, the first task was to establish Tiled level load support, in order to render the game world. Player-wise, movement, collision, statistics, destructibles, etc. Were all a must-have, since this game is attempting to... not be Mario... I suppose. <br><br> Below you will see the landing page, and the gameplay.",
 		github: "https://github.com/GoatBandit/-MGiC-Not-Mario",
-		firstImage: "/assets/images/portfolio/games/university/more_games_cpp_not_mario_menu.JPG",
-		secondImage: "/assets/images/portfolio/games/university/more_games_cpp_not_mario.JPG",
+		firstImage: "/assets/images/portfolio/games/more_games_cpp_not_mario_menu.JPG",
+		secondImage: "/assets/images/portfolio/games/more_games_cpp_not_mario.JPG",
 	},
 	"Biohazard":
 	{
 		title: "Biohazard - Portfolio Game 2 (NetGame)",
 		description: "'More Games in C++' Portfolio Game 2 - 'Net Game'. This project served to introduce us to networking with Kissnet being used, alongside a focus on a lobby system. I am happy with how the project ended up, though there were two final versions. One without online multiplayer gameplay and one with. This was the case because the deadline came as my group and I were attempting to find the source of a memory leak. Perhaps I will come back to this at the end of the academic year and patch it up.<br><br> Once again, Tiled was used as middleware in order to render the game world in a nice way. The gameplay in the end was similar to turn-based strategy games of old, like the first XCOM game. <br><br> Below you will see the landing page, and the gameplay.",
 		github: "https://github.com/GoatBandit/-MGiC-Biohazard",
-		firstImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard.PNG",
-		secondImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard_game.JPG",
+		firstImage: "/assets/images/portfolio/games/more_games_cpp_biohazard.PNG",
+		secondImage: "/assets/images/portfolio/games/more_games_cpp_biohazard_game.JPG",
 	},
 	"Observers":
 	{
 		title: "Observers - Portfolio Game 3 (MovieGame)",
 		description: "'More Games in C++' Portfolio Game 3 - 'Movie Game'. This project served to introduce us to interdisciplinary teams and stack-based scene management. I am happy with how the project ended up. Perhaps I will come back to this at the end of the academic year and enhance it.<br><br> Once again, Tiled was used as middleware in order to render the game world in a nice way. The gameplay in the end was similar to a speedrunning-type game as the user had to explore the map and observe differences before the time limit ran out. <br><br> Below you will see the landing page, and the gameplay.",
 		github: "https://github.com/GoatBandit/-MGiC-Observers",
-		firstImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard.PNG",
-		secondImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard_game.JPG",
-	},
-
-	// Gameplay Programming (UNIVERSITY)
-	"Gameplay Programming":
-	{
-		title: "3D Combat Platformer",
-		description: "BSc Games Technology module - Gameplay Programming. <br><br> ",
-		// github: "https://github.com/GoatBandit/-MGiC-Not-Mario",
-		youtube: "https://youtu.be/slkqRAnRuL0",
-		firstImage: "/assets/images/portfolio/games/university/gameplay_programming_game.JPG",
-		secondImage: "/assets/images/portfolio/games/university/gameplay_programming_game2.JPG",
-	},
-
-	// Game Level Design (UNIVERSITY)
-	"Game Level Design":
-	{
-		title: "Game Level Design",
-		description: "BSc Games Technology module. <br><br> ",
-		// github: "https://github.com/GoatBandit/-MGiC-Not-Mario",
-		firstImage: "/assets/images/portfolio/games/university/game_level_design_game.JPG",
-		secondImage: "/assets/images/portfolio/games/university/game_level_design_game2.JPG",
+		firstImage: "/assets/images/portfolio/games/more_games_cpp_observers_menu.JPG",
+		secondImage: "/assets/images/portfolio/games/more_games_cpp_observers_game.JPG",
 	},
 
 	// SOFTWARE
