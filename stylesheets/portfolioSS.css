@@ -540,7 +540,10 @@ canvas
 	pointer-events: none;
 	opacity: 0;
 	position: relative;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
     
 	z-index: 1000;
 	background: #0F2027;
@@ -552,9 +555,6 @@ canvas
 	transition: opacity .25s linear;
 	overflow: visible;
 	box-shadow: 0 0 100px 10px black inset;
-
-    left: 50%;
-    transform: translateX(-50%);
 }
 
     #textBox.shown 
@@ -601,18 +601,30 @@ canvas
     #textBox .ref
     {
         position: relative;
+        display: flex;
+        flex-flow: column wrap;
         padding: 20px;
-        margin: 0;
-        
-        left: 50%;
-        transform: translateX(-50%);
 
-        width: 100px; height: 100px;
+        width: 100%; 
+        height: 100px;
     }
+
+        #textBox .ref img
+        {
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
 
     #textBox .youtube
     {
         position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        flex: 1 1 100%;
         padding: 20px;
         margin: 0;
         
@@ -624,25 +636,22 @@ canvas
 
     #textBox #tbimg
     {
-        margin: 0;
         position: relative;
-
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        flex: 1 1 320px 180px;
+        width: 320px; 
+        height: 180px;
         padding: 2px;
 
-        margin-left: auto;
-        margin-right: auto;
-
-        background: #80D2E6;
-        border: 0.1px #80D2E6;
-
-        width: 320px; height: 180px;
+        border: transparent;
     }
 
         #textBox #tbimg::after
         {
             content: "";
             clear: both;
-            display: table;
         }
 
     .close
@@ -688,4 +697,9 @@ canvas
     position: fixed; top: 0; left: 0;
 
     z-index: -2;
+}
+
+.singleLine
+{
+    width: 100%;
 }

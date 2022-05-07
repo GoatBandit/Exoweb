@@ -27,6 +27,14 @@ const projectText = {
 		firstImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard.PNG",
 		secondImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard_game.JPG",
 	},
+	"Observers":
+	{
+		title: "Observers - Portfolio Game 3 (MovieGame)",
+		description: "'More Games in C++' Portfolio Game 3 - 'Movie Game'. This project served to introduce us to interdisciplinary teams and stack-based scene management. I am happy with how the project ended up. Perhaps I will come back to this at the end of the academic year and enhance it.<br><br> Once again, Tiled was used as middleware in order to render the game world in a nice way. The gameplay in the end was similar to a speedrunning-type game as the user had to explore the map and observe differences before the time limit ran out. <br><br> Below you will see the landing page, and the gameplay.",
+		github: "https://github.com/GoatBandit/-MGiC-Observers",
+		firstImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard.PNG",
+		secondImage: "/assets/images/portfolio/games/university/more_games_cpp_biohazard_game.JPG",
+	},
 
 	// Gameplay Programming (UNIVERSITY)
 	"Gameplay Programming":
@@ -55,8 +63,8 @@ const projectText = {
 		title: "Landmass Generator",
 		description: "What started out initially as a two-dimensional fantasy map generator quickly became a much larger project than I anticipated. This procedural landmass generator features a small range of options to dictate how you want your landmass developed, in either 2D or 3D. This project remains incomplete, in my opinion, due to it not being at a place that I would have liked it to be. Nonetheless, it is a piece of software in its own right that accomplishes its goal. <br><br> This project was created in Unity so its all coded in C#. It uses noise calculations to create a noise map and generate values for each 'tile'. I would like to recreate this project in the future when my skills have developed further in order to better optimise it and allow it to have more generation options. <br><br> More information can be found on the GitHub repository linked with the github image.",
 		// github: "https://github.com/GoatBandit/games/LandmassGenerator",
-		firstImage: "/assets/images/portfolio/landmass_generator.JPG",
-		secondImage: "/assets/images/portfolio/landmass_generator2.JPG",
+		firstImage: "/assets/images/portfolio/software/landmass_generator.JPG",
+		secondImage: "/assets/images/portfolio/software/landmass_generator2.JPG",
 	},
 
 	"Plandit":
@@ -66,7 +74,7 @@ const projectText = {
 		// github: "https://github.com/GoatBandit/Plandit",
 	},
 
-	// FRONT END DEVELOPMENT
+	// WEB DEVELOPMENT
 	"This Website":
 	{
 		title: "This Website",
@@ -74,11 +82,12 @@ const projectText = {
 		// github: "https://github.com/GoatBandit/GoatBandit.github.io",
 	},
 
-	// EXOWEB
 	"ASOT":
 	{
 		title: "ASOT Property Services",
-		description: "",
+		description: "With an initial design created by another company, I took over management of this website and have been providing a service that ASOT Property Services have been happy with. I manage all aspects of the website and implement anything that is requested.",
+		firstImage: "/assets/images/portfolio/web/ASOT_landing.JPG",
+		secondImage: "/assets/images/portfolio/web/ASOT_gimmick.JPG",
 	},
 
 	// OTHERS
