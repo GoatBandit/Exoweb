@@ -54,11 +54,13 @@ const projectText = {
 	},
 
 	// WEB DEVELOPMENT
-	"This Website":
+	"Bandit":
 	{
-		title: "This Website",
-		description: "This website was my first delve into front-end development and it took a fairly long time, with many issues, to reach a point that I am happy with. <br><br> This website uses both JQuery and JavaScript for effects and scripting due to my desire to experiment and discover which is the preferable one for me to code with in future front-end development projects. The Stylesheets are written in CSS and the rest is hand coded in HTML5. I created the website in this way for the previously-stated reason of wanting to experiment but I also felt it would be the most ideal way to begin learning front-end development. <br><br> More information can be found on the GitHub repository linked with the github image.",
+		title: "Bandit",
+		description: ".",
 		// github: "https://github.com/GoatBandit/GoatBandit.github.io",
+		firstImage: "/assets/images/portfolio/web/bandit_form.JPG",
+		secondImage: "/assets/images/portfolio/web/bandit_invoice.JPG",
 	},
 
 	"ASOT":
