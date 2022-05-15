@@ -1,14 +1,8 @@
-// let going = false;
+let openLang = false;
 let currentEl = null;
-
-// Language buttons
-// const languageButtons = document.querySelectorAll('.lang-button');
-
-// For language large box animation
-const mainIMG = document.querySelector('#details');
-
-// For button information
-const textBox = document.querySelector('#textBox');
+const languageButtons = document.getElementsByClassName('.lang-button'); // Language buttons
+const mainIMG = document.getElementById('#details'); // For language large box animation
+const textBox = document.getElementById('#textBox'); // For button information
 
 // Close lang panel upon clicking outside
 document.click((event) =>
@@ -20,52 +14,55 @@ document.click((event) =>
 	}
 });
 
-// for (let button of languageButtons)
-// {
-// 	// On Button Click
-// 	button.addEventListener('click', () =>
-// 	{
-// 		if (!going) return;
-// 		going = true;
+for (let button of languageButtons)
+{
+	// On Button Click
+	button.addEventListener('click', () =>
+	{
+		if (!openLang)
+		{
+			return;
+		}
+		openLang = true;
 
-// 		if (button.className.includes('active'))
-// 		{
-// 			button.className = 'lang-button';
-// 			undoLargeBoxAnim();
+		if (button.className.includes('active'))
+		{
+			button.className = 'lang-button';
+			undoLargeBoxAnim();
 
-// 			setTimeout(() =>
-// 			{
-// 				going = false;
-// 			}, 50);
-// 			return;
-// 		}
+			setTimeout(() =>
+			{
+				openLang = false;
+			}, 50);
+			return;
+		}
 
-// 		// Remove underline from old lang
-// 		if (currentEl) currentEl.className = 'lang-button';
-// 		button.className = 'lang-button active';
+		// Remove underline from old lang
+		if (currentEl) currentEl.className = 'lang-button';
+		button.className = 'lang-button active';
 
-// 		// Open Lang Button
-// 		currentEl = button;
-// 		undoLargeBoxAnim();
+		// Open Lang Button
+		currentEl = button;
+		undoLargeBoxAnim();
 
-// 		setTimeout(() =>
-// 		{
-// 			let panel = document.getElementById(button.getAttribute('data-panel'));
-// 			panel.classList.add('shown');
-// 			mainIMG.classList.remove('shown');
-// 			going = false;
+		setTimeout(() =>
+		{
+			let panel = document.getElementById(button.getAttribute('data-panel'));
+			panel.classList.add('shown');
+			mainIMG.classList.remove('shown');
+			openLang = false;
 
-// 			// Animate all the children
-// 			let divs = panel.querySelectorAll('.projects>.proj');
-// 			let timeout = 400;
-// 			for (let div of divs)
-// 			{
-// 				setTimeout(() => div.classList.add('loaded'), timeout);
-// 				timeout += 50;
-// 			}
-// 		}, 50);
-// 	});
-// }
+			// Animate all the children
+			let divs = panel.querySelectorAll('.projects>.proj');
+			let timeout = 400;
+			for (let div of divs)
+			{
+				setTimeout(() => div.classList.add('loaded'), timeout);
+				timeout += 50;
+			}
+		}, 50);
+	});
+}
 
 // Close the opening animation for the language buttons
 function undoLargeBoxAnim()
