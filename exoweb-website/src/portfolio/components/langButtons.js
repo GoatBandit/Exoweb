@@ -1,115 +1,101 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Introduction from "./introduction";
 
 function LangButtons()
 {
-    let openLang = false;
-    let currentEl = null;
-    const languageButtons = document.querySelectorAll(".lang-button"); // Language buttons
-    const mainIMG = document.querySelector('#details'); // For language large box animation
-    const textBox = document.querySelector('#textBox'); // For button information
+    // let currentEl = null;
 
-    const langPanelRef = useRef();
-    const [isLangPanelOpen, setIsLangPanelOpen] = useState(false);
+    const [langPanelOpen, setLangPanelOpen] = useState(false);
+    const [langPanelSelected, setLangPanelSelected] = useState(null);
+    let currentElement = useState(null);
+    var languageButtons = document.getElementsByClassName("lang-button"); // Language buttons
+    var langPanelContainer = document.getElementsByClassName("lang-panel.shown")
 
-    // Close lang panel upon clicking outside 
+    const mainIMG = document.getElementById('details'); // For language large box animation
+    const textBox = document.getElementById('textBox'); // For button information
+
+    function handleClickEvent(event)
+    {
+        if (event.target.className == "lang-button")
+        {
+            OpenLangPanel(event);
+            setLangPanelOpen(true);
+            console.log(langPanelOpen);
+        }
+
+        // Close lang panel upon clicking outside 
+        if (event.target.className !== "lang-button")
+        {
+            if (langPanelOpen)
+            {
+                langPanelSelected.className = 'lang-button';
+                undoLargeBoxAnim();
+                setLangPanelOpen(false);
+                console.log("Off");
+            }
+        }
+    }
+
+    function OpenLangPanel(event)
+    {
+        if (event.target.className.includes('active'))
+        {
+            setTimeout(() =>
+            {
+                setLangPanelOpen(true);
+                undoLargeBoxAnim();
+            }, 50);
+            return;
+        }
+
+        // Remove underline from old lang
+        if (currentElement)
+        {
+            currentElement.className = 'lang-button';
+        }
+        event.target.className = "lang-button active";
+        setLangPanelSelected(event.target);
+
+        setTimeout(() =>
+        {
+            let panel = document.getElementById(event.target.getAttribute('data-panel'));
+            panel.classList.add('shown');
+            mainIMG.classList.remove('shown');
+            setLangPanelOpen(true);
+
+            // Animate all the children
+            let divs = panel.querySelectorAll('.projects>.proj');
+            let timeout = 400;
+            for (let div of divs)
+            {
+                setTimeout(() => div.classList.add('loaded'), timeout);
+                timeout += 50;
+            }
+        }, 50);
+    }
+
+    // Close the opening animation for the language buttons
+    function undoLargeBoxAnim()
+    {
+        // Hide current panel
+        let shownPanel = document.querySelector('.lang-panel.shown');
+        if (shownPanel)
+        {
+            shownPanel.classList.remove('shown');
+            shownPanel.querySelectorAll('.projects>.proj').forEach(c => c.className = 'proj');
+            textBox.classList.remove('shown');
+
+            mainIMG.classList.add('shown');
+        }
+    }
+
     useEffect(() => 
     {
-        function checkClickLocation(event)
-        {
-            // if ((".lang-panel-shown").contains(event.target) && (event.target).closest('.lang-button').length === 0 && (event.target).closest("#textBox").is("#textBox") === 0)
-            if (isLangPanelOpen && langPanelRef.current && !langPanelRef.current.contains(event.target))
-            {
-                undoLargeBoxAnim();
-                if (currentEl) currentEl.className = 'lang-button';
-                setIsLangPanelOpen(false);
-            }
-
-            // if (!isLangPanelOpen && )
-        }
-        document.addEventListener("mousedown", checkClickLocation);
-
-        // document.click((event) =>
-        // {
-        //     if ((event.target) === languageButtons)
-        //     {
-        //         console.log("Beep");
-        //     }
-        // });
-
-        // var openLangSection = function ()
-        // {
-        //     var attribute = this.getAttribute("")
-        // }
-
-        for (var button of languageButtons)
-        {
-            button.addEventListener("click", () => 
-            {
-                if (openLang)
-                {
-                    return;
-                }
-                openLang = true;
-
-                if (button.className.includes('active'))
-                {
-                    button.className = 'lang-button';
-                    undoLargeBoxAnim();
-
-                    setTimeout(() =>
-                    {
-                        openLang = false;
-                    }, 50);
-
-                    return;
-                }
-
-                // Remove underline from old lang
-                if (currentEl) currentEl.className = 'lang-button';
-                button.className = 'lang-button active';
-
-                // Open Lang Button
-                currentEl = button;
-                undoLargeBoxAnim();
-
-                setTimeout(() =>
-                {
-                    let panel = document.getElementById(button.getAttribute('data-panel'));
-                    panel.classList.add('shown');
-                    mainIMG.classList.remove('shown');
-                    openLang = false;
-
-                    // Animate all the children
-                    let divs = panel.querySelectorAll('.projects>.proj');
-                    let timeout = 400;
-                    for (let div of divs)
-                    {
-                        setTimeout(() => div.classList.add('loaded'), timeout);
-                        timeout += 50;
-                    }
-                }, 50);
-            });
-        }
-
-        // Close the opening animation for the language buttons
-        function undoLargeBoxAnim()
-        {
-            // Hide current panel
-            let shownPanel = document.querySelector('.lang-panel.shown');
-            if (shownPanel)
-            {
-                shownPanel.classList.remove('shown');
-                shownPanel.querySelectorAll('.projects>.proj').forEach(c => c.className = 'proj');
-                textBox.classList.remove('shown');
-
-                mainIMG.classList.add('shown');
-            }
-        }
+        document.addEventListener("mousedown", handleClickEvent);
 
         return () =>
         {
-            document.removeEventListener("mousedown", checkClickLocation);
+            document.removeEventListener("mousedown", handleClickEvent);
         }
     });
 
