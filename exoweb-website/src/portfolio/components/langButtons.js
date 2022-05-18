@@ -1,37 +1,34 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import Introduction from "./introduction";
+import React, { useState, useEffect } from "react";
+import Projects from "./projects"
 
 function LangButtons()
 {
-    // let currentEl = null;
-
     const [langPanelOpen, setLangPanelOpen] = useState(false);
     const [langPanelSelected, setLangPanelSelected] = useState(null);
     let currentElement = useState(null);
-    var languageButtons = document.getElementsByClassName("lang-button"); // Language buttons
-    var langPanelContainer = document.getElementsByClassName("lang-panel.shown")
 
     const mainIMG = document.getElementById('details'); // For language large box animation
     const textBox = document.getElementById('textBox'); // For button information
 
     function handleClickEvent(event)
     {
-        if (event.target.className == "lang-button")
+        if (event.target.className === "lang-button")
         {
             OpenLangPanel(event);
             setLangPanelOpen(true);
-            console.log(langPanelOpen);
         }
 
         // Close lang panel upon clicking outside 
-        if (event.target.className !== "lang-button")
+        if (event.target.className !== "lang-button" && event.target.className !== "lang-panel shown")
         {
-            if (langPanelOpen)
+            for (let shownPanel of document.getElementsByClassName("lang-panel shown"))
             {
-                langPanelSelected.className = 'lang-button';
-                undoLargeBoxAnim();
-                setLangPanelOpen(false);
-                console.log("Off");
+                if (!shownPanel.contains(event.target) && langPanelOpen)
+                {
+                    langPanelSelected.className = 'lang-button';
+                    undoLargeBoxAnim();
+                    setLangPanelOpen(false);
+                }
             }
         }
     }
@@ -102,7 +99,6 @@ function LangButtons()
     return (
         <>
             <div id="Header">
-                <Introduction />
                 <div id="main">
                     <h2>I'm a software developer that works on</h2>
                     <h2>
@@ -185,6 +181,10 @@ function LangButtons()
                     </div>
                 </div>
             </div>
+
+            <div id="boxAnim" />
+
+            <Projects />
         </>
     )
 }

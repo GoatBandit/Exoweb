@@ -62,11 +62,13 @@ function Introduction()
 
             setIntroduced(true);
         }
-    })
+    }, [introduced])
 
     return (
         <div>
-            <h1 id="intro">GOATBANDIT</h1>
+            <h1 id="intro">
+                GOATBANDIT
+            </h1>
         </div>
     );
 }
