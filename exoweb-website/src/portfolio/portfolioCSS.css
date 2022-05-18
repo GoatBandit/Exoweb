@@ -263,16 +263,16 @@ canvas
         -moz-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
 
-	opacity: 0;
-    
-	z-index: 1000;
-	background: #0F2027;
+        opacity: 0;
+        
+        z-index: 1000;
+        background: #0F2027;
 
-	border-radius: 20px;
+        border-radius: 20px;
 
-	transition: opacity .25s linear;
-	overflow: visible;
-	box-shadow: 0 0 100px 10px black inset;
+        transition: opacity .25s linear;
+        overflow: visible;
+        box-shadow: 0 0 100px 10px black inset;
     }
 
         
@@ -354,33 +354,10 @@ canvas
 
     #details 
     {
-        opacity: 1;
-        z-index: 1;
-        top: 50%; left: 50%;
-        position: absolute;
-        background-position: center;
-
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-
-        transition: all 0.125s ease-in-out;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
     }
-
-        #details.gone 
-        {
-            opacity: 0;
-            z-index: -1;
-
-            transform: translateY(10vh);
-        }
-
-        .mainImage
-        {
-            width: 80%; height: 80%;
-
-            transform: translate(12.5%, 0%);
-        }
 
     #rect 
     {
@@ -570,6 +547,34 @@ canvas
                 border-bottom-color: #f1ff71;
                 border-left-color: #f1ff71;
             }
+
+    /* .table
+    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3rem;
+    } */
+
+    .table 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+      
+      .table > div 
+      {
+        width: 30%;
+        min-width: 300px;
+        max-width: 500px;
+        height: 400px;
+        padding: 5px;
+        margin: 15px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #4848482f;
+      }
 
 /* modal */
 #textBox 

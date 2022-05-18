@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Projects from "./projects"
+// import Projects from "./projects"
+import projects from "./projectHighlight"
 
 function LangButtons()
 {
@@ -9,6 +10,9 @@ function LangButtons()
 
     const mainIMG = document.getElementById('details'); // For language large box animation
     const textBox = document.getElementById('textBox'); // For button information
+
+    const [menuItem, setMenuItem] = useState(projects);
+    const [filter, setFilter] = useState([])
 
     function handleClickEvent(event)
     {
@@ -177,14 +181,35 @@ function LangButtons()
                     </div>
 
                     <div id="details">
-                        <img className="mainImage" alt="Front Logo" src="/assets/images/goatLogo.png" />
+                        {/* <div className="lang-panel"> */}
+                            {/* <div className="proj"> */}
+                                <div className="table">
+                                    {
+                                        menuItem.map((item) =>
+                                        {
+                                            return <div className="item-con" key={item.id}>
+                                                <div className="item-container">
+                                                    <img src={item.firstImage} alt="" />
+                                                    <h3>{item.title}</h3>
+                                                    <p>{item.description}</p>
+                                                </div>
+
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                            {/* </div> */}
+
+                        {/* </div> */}
+                        {/* <img className="mainImage" alt="Front Logo" src="../../../public/goatLogo.png" /> */}
                     </div>
+
                 </div>
             </div>
 
             <div id="boxAnim" />
 
-            <Projects />
+            {/* <Projects /> */}
         </>
     )
 }

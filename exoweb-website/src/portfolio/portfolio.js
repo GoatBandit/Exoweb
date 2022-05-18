@@ -1,5 +1,4 @@
 import "./portfolioCSS.css";
-// import "./scripts/portfolioProjectDetails"
 import Introduction from "./components/introduction";
 import LangButtons from "./components/langButtons";
 

@@ -1,66 +1,68 @@
 import ProjectDetails from "./projectDetails";
+// import ProjectHighlight from "./projectHighlight";
 
 function Projects()
 {
-    const textBox = document.getElementById('textBox'); // For button information
+    const textBox = document.querySelector("#textBox"); // For button information
     // Allow for buttons inside the project info to be shown only when there is a corresponding link to it in 'portfolioProjectDetails.js'
     let projectInfo = document.querySelectorAll('.proj');
 
     // After clicking on a project, display the project information
-    for (let projectNumber of projectInfo)
+    for (let projectID of projectInfo)
     {
-        projectNumber.addEventListener('click', () =>
+        projectID.addEventListener('click', () =>
         {
-            let projectText = projectNumber.getAttribute('data-project');
-            let details = projectText[projectNumber.getAttribute('data-project')];
-            let colour = projectNumber.parentElement.getAttribute('data-cat');
+            // let projectText = projectID.getAttribute('data-project');
+            // let details = projectText[projectID.getAttribute('data-project')];
+            let colour = projectID.parentElement.getAttribute('data-cat');
 
-            textBox.children[0].innerHTML = details.title;
-            textBox.children[1].innerHTML = details.description;
+            // textBox.children[0].innerHTML = details.title;
+            // textBox.children[0].innerHTML = details.title;
+            // textBox.children[1].innerHTML = details.description;
 
-            if (details.github)
-            {
-                textBox.children[4].style.display = 'block';
-                textBox.children[4].href = details.github;
-            }
-            else
-            {
-                textBox.children[4].style.display = 'none';
-            }
+            // if (details.github)
+            // {
+            //     textBox.children[4].style.display = 'block';
+            //     textBox.children[4].href = details.github;
+            // }
+            // else
+            // {
+            //     textBox.children[4].style.display = 'none';
+            // }
 
-            if (details.youtube)
-            {
-                textBox.children[5].style.display = 'block';
-                textBox.children[5].href = details.youtube;
-            }
-            else
-            {
-                textBox.children[5].style.display = 'none';
-            }
+            // if (details.youtube)
+            // {
+            //     textBox.children[5].style.display = 'block';
+            //     textBox.children[5].href = details.youtube;
+            // }
+            // else
+            // {
+            //     textBox.children[5].style.display = 'none';
+            // }
 
-            if (details.firstImage && details.secondImage)
-            {
-                textBox.children[6].style.display = 'block';
-                textBox.children[6].src = details.firstImage;
-            }
-            else
-            {
-                textBox.children[6].style.display = 'none';
-            }
+            // if (details.firstImage && details.secondImage)
+            // {
+            //     textBox.children[6].style.display = 'block';
+            //     textBox.children[6].src = details.firstImage;
+            // }
+            // else
+            // {
+            //     textBox.children[6].style.display = 'none';
+            // }
 
-            if (details.firstImage && details.secondImage)
-            {
-                textBox.children[7].style.display = 'block';
-                textBox.children[7].src = details.secondImage;
-            }
-            else
-            {
-                textBox.children[7].style.display = 'none';
-            }
+            // if (details.firstImage && details.secondImage)
+            // {
+            //     textBox.children[7].style.display = 'block';
+            //     textBox.children[7].src = details.secondImage;
+            // }
+            // else
+            // {
+            //     textBox.children[7].style.display = 'none';
+            // }
 
             textBox.classList.add(colour);
             textBox.classList.add('shown');
-            textBox.openingElement = projectNumber;
+            textBox.openingElement = projectID;
         });
     }
 
@@ -216,9 +218,7 @@ function Projects()
                 </h3>
             </div>
 
-            <ProjectDetails 
-                textBox={textBox}
-            />
+            <ProjectDetails />
         </>
     );
 }
