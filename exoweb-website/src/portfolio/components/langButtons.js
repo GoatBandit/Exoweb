@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import Projects from "./projects"
+import Projects from "./projects"
 import projects from "./projectHighlight"
 
 function LangButtons()
@@ -181,26 +181,28 @@ function LangButtons()
                     </div>
 
                     <div id="details">
-                        {/* <div className="lang-panel"> */}
-                            {/* <div className="proj"> */}
-                                <div className="table">
-                                    {
-                                        menuItem.map((item) =>
-                                        {
-                                            return <div className="item-con" key={item.id}>
-                                                <div className="item-container">
-                                                    <img src={item.firstImage} alt="" />
-                                                    <h3>{item.title}</h3>
-                                                    <p>{item.description}</p>
-                                                </div>
+                        <div className="table">
+                            {
+                                menuItem.map((item) =>
+                                {
+                                    return <div className="item-con" id={item.category} key={item.id}>
+                                        <div className="item-container" data-cat={item.category}>
+                                            <img src={item.firstImage} alt="" 
+                                            onMouseEnter={e => (e.currentTarget.src = item.secondImage)} 
+                                            onMouseLeave={e => (e.currentTarget.src = item.firstImage)} />
+                                            <div className="tip">{item.languages}</div>
+                                            <div className="tip">{item.skills}</div>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.description}</p>
+                                            {item.github && (
+                                                <a className="ref" href={item.github} target={item.github}>Github</a>
+                                            )}
+                                        </div>
 
-                                            </div>
-                                        })
-                                    }
-                                </div>
-                            {/* </div> */}
-
-                        {/* </div> */}
+                                    </div>
+                                })
+                            }
+                        </div>
                         {/* <img className="mainImage" alt="Front Logo" src="../../../public/goatLogo.png" /> */}
                     </div>
 
@@ -209,7 +211,7 @@ function LangButtons()
 
             <div id="boxAnim" />
 
-            {/* <Projects /> */}
+            <Projects />
         </>
     )
 }

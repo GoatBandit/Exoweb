@@ -275,8 +275,6 @@ canvas
         box-shadow: 0 0 100px 10px black inset;
     }
 
-        
-
         .lang-panel h2
         {
             padding-top: 10px;
@@ -356,7 +354,7 @@ canvas
     {
         display: flex;
         justify-content: center;
-        padding: 50px;
+        padding-top: 50px;
     }
 
     #rect 
@@ -481,73 +479,6 @@ canvas
             right: 0;
         }
 
-            .proj.loaded::before, .proj.loaded::after 
-            {
-                width: 100%;
-                height: 100%;
-            }
-
-            .projects.lang1 > .proj.loaded::before 
-            {
-                border-top-color: #7750A9;
-                border-right-color: #7750A9;
-            }
-
-            .projects.lang1 > .proj.loaded::after 
-            {
-                border-bottom-color: #7750A9;
-                border-left-color: #7750A9;
-            }
-
-
-            .projects.lang2 > .proj.loaded::before 
-            {
-                border-top-color: #8A72BE;
-                border-right-color: #8A72BE;
-            }
-
-            .projects.lang2 > .proj.loaded::after 
-            {
-                border-bottom-color: #8A72BE;
-                border-left-color: #8A72BE;
-            }
-
-            .projects.lang3 > .proj.loaded::before 
-            {
-                border-top-color: #80D2E6;
-                border-right-color: #80D2E6;
-            }
-
-            .projects.lang3 > .proj.loaded::after 
-            {
-                border-bottom-color: #80D2E6;
-                border-left-color: #80D2E6;
-            }
-
-            .projects.lang4 > .proj.loaded::before 
-            {
-                border-top-color: #50BED2;
-                border-right-color: #50BED2;
-            }
-
-            .projects.lang4 > .proj.loaded::after 
-            {
-                border-bottom-color: #50BED2;
-                border-left-color: #50BED2;
-            }
-
-            .projects.others > .proj.loaded::before 
-            {
-                border-top-color: #f1ff71;
-                border-right-color: #f1ff71;
-            }
-
-            .projects.others > .proj.loaded::after 
-            {
-                border-bottom-color: #f1ff71;
-                border-left-color: #f1ff71;
-            }
-
     /* .table
     {
         display: grid;
@@ -560,21 +491,82 @@ canvas
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        max-width: 1450px;
     }
       
-      .table > div 
-      {
-        width: 30%;
-        min-width: 300px;
-        max-width: 500px;
-        height: 400px;
-        padding: 5px;
-        margin: 15px;
-        overflow: hidden;
-        text-align: center;
-        border-radius: 20px;
-        background-color: #4848482f;
-      }
+        .table .item-con 
+        {
+            min-width: 350px;
+            max-width: 350px;
+            height: 450px;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            overflow: hidden;
+            text-align: center;
+            border-style: solid;
+            border-radius: 20px;
+            border-width: 3px;
+            background-color: #4848482f;
+        }
+
+        .item-con:nth-child(1), 
+        .item-con:nth-child(2),
+        .item-con:nth-child(3)
+        {
+            margin-top: 0px;
+        }
+
+        .item-con img
+        {
+            max-height: 200px;
+            max-width: 350px;
+        }
+
+            .item-con img:hover
+            {
+                transition: all 0.2s;
+            }
+
+        .item-con .tip
+        {
+            margin: 5px;
+            word-spacing: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: transparent;
+            border-top-left-radius: 37px 140px;
+            border-top-right-radius: 23px 130px;
+            border-bottom-left-radius: 110px 19px;
+            border-bottom-right-radius: 120px 24px;
+            box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+            .item-con .tip:hover
+            {
+                border-color: white;
+            }
+
+        .item-con h3
+        {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .item-con p
+        {
+            font-size: 15px;
+            color: #bfbfbfbf;
+            word-spacing: 1px;
+        }
+
+        .item-con .ref
+        {
+            margin-top: 20px;
+        }
 
 /* modal */
 #textBox 
