@@ -58,14 +58,6 @@ a
         text-decoration: none;
     }
 
-#main 
-{
-    /* opacity: 0; */
-    transition: 0.5s;
-    color: white;
-    margin-top: 60px;
-}
-
 h2 
 {
 	text-align: center;
@@ -97,12 +89,20 @@ canvas
 
     #intro
     {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 
-        #main
+    #Portfolio
+    {
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+        #Start
         {
-            margin-top: 80px;
+            position: relative;
+            color: white;
+            margin-top: 100px;
         }
 
             .copyright
@@ -354,7 +354,8 @@ canvas
     {
         display: flex;
         justify-content: center;
-        padding-top: 50px;
+        margin: 0px;
+        padding: 0px;
     }
 
     #rect 
@@ -479,43 +480,48 @@ canvas
             right: 0;
         }
 
-    /* .table
-    {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 3rem;
-    } */
-
     .table 
     {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         max-width: 1450px;
+        margin-top: 50px;
     }
       
-        .table .item-con 
-        {
-            min-width: 350px;
-            max-width: 350px;
-            height: 450px;
-            padding: 5px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 100px;
-            overflow: hidden;
-            text-align: center;
-            border-style: solid;
-            border-radius: 20px;
-            border-width: 3px;
-            background-color: #4848482f;
-        }
+    .item-con 
+    {
+        min-width: 350px;
+        max-width: 350px;
+        height: 450px;
+        padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+        overflow: hidden;
+        text-align: center;
+        border-style: solid;
+        border-radius: 20px;
+        border-width: 3px;
+        background-color: #4848482f;
+        opacity: 0.5;
+        transition: all 0.2s;
+    }
 
-        .item-con:nth-child(1), 
+        /* .item-con:nth-child(1), 
         .item-con:nth-child(2),
         .item-con:nth-child(3)
         {
             margin-top: 0px;
+        } */
+
+        .item-con:hover
+        {
+            opacity: 1.0;
+            min-width: 400px;
+            max-width: 400px;
+            height: 500px;
+            margin-bottom: 0px;
         }
 
         .item-con img

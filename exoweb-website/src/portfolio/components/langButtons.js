@@ -103,7 +103,7 @@ function LangButtons()
     return (
         <>
             <div id="Header">
-                <div id="main">
+                <div id="Start">
                     <h2>I'm a software developer that works on</h2>
                     <h2>
                         <span className="lang-button" style={{ "color": "#7750A9" }} data-panel="lang1">
@@ -187,9 +187,9 @@ function LangButtons()
                                 {
                                     return <div className="item-con" id={item.category} key={item.id}>
                                         <div className="item-container" data-cat={item.category}>
-                                            <img src={item.firstImage} alt="" 
-                                            onMouseEnter={e => (e.currentTarget.src = item.secondImage)} 
-                                            onMouseLeave={e => (e.currentTarget.src = item.firstImage)} />
+                                            <img src={item.firstImage} alt=""
+                                                onMouseEnter={e => (e.currentTarget.src = item.secondImage)}
+                                                onMouseLeave={e => (e.currentTarget.src = item.firstImage)} />
                                             <div className="tip">{item.languages}</div>
                                             <div className="tip">{item.skills}</div>
                                             <h3>{item.title}</h3>

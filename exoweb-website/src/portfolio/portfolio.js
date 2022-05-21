@@ -8,7 +8,9 @@ function Portfolio()
         <>
             <div id="container">
                 <Introduction />
-                <LangButtons />
+                <div id="Portfolio">
+                    <LangButtons />
+                </div>
                 <div id="bg"></div>
 
             </div>

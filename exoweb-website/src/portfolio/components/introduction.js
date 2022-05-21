@@ -8,7 +8,7 @@ function Introduction()
     {
         if (!introduced)
         {
-            let header = document.querySelector('#intro');
+            let intro = document.querySelector('#intro');
             let anim =
                 [
                     { t: "", ms: 400 },
@@ -40,7 +40,7 @@ function Introduction()
             let update = () => 
             {
                 let step = anim[i];
-                header.innerText = step.t;
+                intro.innerText = step.t;
                 i++;
 
                 if (i < anim.length)
@@ -49,10 +49,10 @@ function Introduction()
                 }
                 else 
                 {
-                    header.classList.add('top');
+                    intro.classList.add('top');
                     setTimeout(() => 
                     {
-                        document.getElementById('main').style.opacity = 1;
+                        document.getElementById('Portfolio').style.opacity = 1;
                     }, 500);
 
                     window.localStorage.stepDenominator = 2;
