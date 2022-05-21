@@ -428,42 +428,6 @@ canvas
                     opacity: 1;
                 }
 
-                /* #notMario
-                {
-                    background-image: url(/assets/images/portfolio/games/more_games_cpp_not_mario_menu.JPG);
-                    background-size: cover;
-                }
-                
-                    #notMario:hover
-                    {
-                        background-image: url(/assets/images/portfolio/games/MGIC-NotMario.gif);
-                    }
-
-                #biohazard
-                {
-                    background-image: url(/assets/images/portfolio/games/more_games_cpp_biohazard.png);
-                    background-size: cover;
-                    background-position: left;
-                }
-                
-                    #biohazard:hover
-                    {
-                        background-image: url(/assets/images/portfolio/games/MGIC-Biohazard.gif);
-                        background-position: center;
-                    }
-
-                #observers
-                {
-                    background-image: url(/assets/images/portfolio/games/more_games_cpp_observers_menu.JPG);
-                    background-size: cover;
-                }
-                
-                    #observers:hover
-                    {
-                        background-image: url(/assets/images/portfolio/games/MGIC-Observers.gif);
-                        background-position: left;
-                    } */
-
         .proj::before, .proj::after 
         {
             border: 2px solid transparent;
@@ -508,13 +472,6 @@ canvas
         transition: all 0.2s;
     }
 
-        /* .item-con:nth-child(1), 
-        .item-con:nth-child(2),
-        .item-con:nth-child(3)
-        {
-            margin-top: 0px;
-        } */
-
         .item-con:hover
         {
             opacity: 1.0;
@@ -539,20 +496,25 @@ canvas
         {
             margin: 5px;
             word-spacing: 5px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: transparent;
-            border-top-left-radius: 37px 140px;
-            border-top-right-radius: 23px 130px;
-            border-bottom-left-radius: 110px 19px;
-            border-bottom-right-radius: 120px 24px;
-            box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
             transition: all 0.2s;
         }
-
-            .item-con .tip:hover
+    
+            .item-con p, 
+            .item-con h3
             {
-                border-color: white;
+                transition: all 0.2s;
+            }
+
+            .tip:hover,
+            .item-con h3:hover
+            {
+                /* border-color: white; */
+                font-size: larger;
+            }
+
+            .item-con p:hover
+            {
+                font-size: 17px;
             }
 
         .item-con h3
@@ -577,13 +539,16 @@ canvas
 /* modal */
 #textBox 
 {
+	position: absolute;
 	pointer-events: none;
 	opacity: 0;
-	position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    top: 250px;
+    margin-left: auto;
+    margin-right: auto;
     
 	z-index: 1000;
 	background: #0F2027;

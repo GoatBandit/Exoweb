@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Projects from "./projects"
-import projects from "./projectHighlight"
+import Projects from "./projectHighlight"
+import ProjectDetails from "./projectDetails";
 
 function LangButtons()
 {
@@ -11,8 +11,9 @@ function LangButtons()
     const mainIMG = document.getElementById('details'); // For language large box animation
     const textBox = document.getElementById('textBox'); // For button information
 
-    const [menuItem, setMenuItem] = useState(projects);
+    const [menuItem, setMenuItem] = useState(Projects);
     const [filter, setFilter] = useState([])
+
 
     function handleClickEvent(event)
     {
@@ -73,6 +74,14 @@ function LangButtons()
                 timeout += 50;
             }
         }, 50);
+    }
+
+    function showProjectText(event)
+    {
+        const textBoxx = document.getElementById('textBox'); // For button information
+        console.log("showText")
+        textBoxx.classList.add('shown');
+        textBoxx.openingElement = event.target;
     }
 
     // Close the opening animation for the language buttons
@@ -148,19 +157,15 @@ function LangButtons()
                             <span className="underline" style={{ "backgroundColor": "#d87777" }}></span>
                         </span>,&nbsp;
                         <span className="lang-button" style={{ "color": " #d87777" }} data-panel="specificLanguage">
-                            JavaScript
-                            <span className="underline" style={{ "backgroundColor": "#d87777" }}></span>
-                        </span>,&nbsp;
-                        <span className="lang-button" style={{ "color": " #d87777" }} data-panel="specificLanguage">
                             ReactJS
                             <span className="underline" style={{ "backgroundColor": "#d87777" }}></span>
                         </span>,&nbsp;
                         <span className="lang-button" style={{ "color": " #d87777" }} data-panel="specificLanguage">
-                            HTML5
+                            JavaScript
                             <span className="underline" style={{ "backgroundColor": "#d87777" }}></span>
                         </span>,&nbsp;
                         <span className="lang-button" style={{ "color": " #d87777" }} data-panel="specificLanguage">
-                            CSS
+                            HTML/CSS
                             <span className="underline" style={{ "backgroundColor": "#d87777" }}></span>
                         </span>.
                     </p>
@@ -185,7 +190,8 @@ function LangButtons()
                             {
                                 menuItem.map((item) =>
                                 {
-                                    return <div className="item-con" id={item.category} key={item.id}>
+                                    return <div className="item-con" id={item.category} key={item.id}
+                                    onClick={showProjectText}>
                                         <div className="item-container" data-cat={item.category}>
                                             <img src={item.firstImage} alt=""
                                                 onMouseEnter={e => (e.currentTarget.src = item.secondImage)}
@@ -211,7 +217,7 @@ function LangButtons()
 
             <div id="boxAnim" />
 
-            <Projects />
+            <ProjectDetails />
         </>
     )
 }
