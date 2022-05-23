@@ -9,7 +9,6 @@ function LangButtons()
     let currentElement = useState(null);
 
     const mainIMG = document.getElementById('details'); // For language large box animation
-    const textBox = document.getElementById('textBox'); // For button information
 
     const [menuItem, setMenuItem] = useState(Projects);
     const [filter, setFilter] = useState([])
@@ -78,10 +77,9 @@ function LangButtons()
 
     function showProjectText(event)
     {
-        const textBoxx = document.getElementById('textBox'); // For button information
-        console.log("showText")
-        textBoxx.classList.add('shown');
-        textBoxx.openingElement = event.target;
+        const textBox = document.getElementById('textBox'); // For button information
+        textBox.classList.add('shown');
+        textBox.openingElement = event.target;
     }
 
     // Close the opening animation for the language buttons
@@ -89,6 +87,7 @@ function LangButtons()
     {
         // Hide current panel
         let shownPanel = document.querySelector('.lang-panel.shown');
+        const textBox = document.getElementById('textBox'); // For button information
         if (shownPanel)
         {
             shownPanel.classList.remove('shown');
@@ -191,7 +190,7 @@ function LangButtons()
                                 menuItem.map((item) =>
                                 {
                                     return <div className="item-con" id={item.category} key={item.id}
-                                    onClick={showProjectText}>
+                                        onClick={showProjectText}>
                                         <div className="item-container" data-cat={item.category}>
                                             <img src={item.firstImage} alt=""
                                                 onMouseEnter={e => (e.currentTarget.src = item.secondImage)}
