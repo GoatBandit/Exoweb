@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import Filter from "./filter"
 import Projects from "./projectHighlight"
 import ProjectDetails from "./projectDetails";
+import FilterButton from "./filterButton";
+
+const allCategories =
+    [
+        "all",
+        ...new Set(Projects.map(item => item.category))
+    ];
 
 function LangButtons()
 {
@@ -12,7 +19,7 @@ function LangButtons()
     const mainIMG = document.getElementById('details'); // For language large box animation
 
     const [menuItem, setMenuItem] = useState(Projects);
-    const [filter, setFilter] = useState([])
+    const [filterButtons, setFilterButtons] = useState(allCategories);
 
 
     function handleClickEvent(event)
@@ -35,6 +42,19 @@ function LangButtons()
                     setLangPanelOpen(false);
                 }
             }
+        }
+    }
+
+    const filter = (button) =>
+    {
+        if (button === "all")
+        {
+            setMenuItem(Projects);
+        }
+        else
+        {
+            const filteredData = Projects.filter(item => item.category === button);
+            setMenuItem(filteredData);
         }
     }
 
@@ -113,6 +133,8 @@ function LangButtons()
         <>
             <div id="Header">
                 <div id="Start">
+                    <h2>I'm a software developer that works on</h2>
+                    <FilterButton filterButton={filterButtons} filter={filter} />
                     <Filter />
 
                     <div className="copyright">

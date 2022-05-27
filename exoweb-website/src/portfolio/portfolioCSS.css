@@ -459,8 +459,8 @@ canvas
         max-width: 350px;
         height: 450px;
         padding: 5px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 55px;
+        margin-right: 55px;
         margin-bottom: 100px;
         overflow: hidden;
         text-align: center;
@@ -475,10 +475,7 @@ canvas
         .item-con:hover
         {
             opacity: 1.0;
-            min-width: 400px;
-            max-width: 400px;
-            height: 500px;
-            margin-bottom: 0px;
+            transform: scale(1.1);
         }
 
         .item-con img
