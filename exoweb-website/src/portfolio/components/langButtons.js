@@ -90,17 +90,6 @@ function LangButtons()
 
                     <Filter filterButton={filterButtons} filter={filter} />
 
-                    <div className="copyright">
-                        <p>
-                            &copy; Connor Easterbrook
-                        </p>
-                        <div data-project="Credits" className="proj">
-                            <button className="credit">
-                                <span>Credit</span>
-                            </button>
-                        </div>
-                    </div>
-
                     <div id="details">
                         <div className="table">
                             {
@@ -125,9 +114,18 @@ function LangButtons()
                                 })
                             }
                         </div>
-                        {/* <img className="mainImage" alt="Front Logo" src="../../../public/goatLogo.png" /> */}
                     </div>
 
+                    <div className="copyright">
+                        <p>
+                            &copy; Connor Easterbrook
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="img">
+                    <img className="mainImage" alt="Front Logo" src="/goatLogo.png" />
                 </div>
             </div>
 
