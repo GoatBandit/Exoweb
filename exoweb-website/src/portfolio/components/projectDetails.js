@@ -26,7 +26,6 @@ function ProjectDetails()
         <div id="textBox">
             {details.map(function (detail, i)
             {
-                console.log(i);
                 return <div key={i}>
                     <h2 className="singleLine" key="title">{detail.title}</h2>
                     <p key="desc">{detail.description}</p>

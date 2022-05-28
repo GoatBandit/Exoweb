@@ -6,6 +6,12 @@ export default [
     {
         id: 1,
         category: "lang1",
+        filter: 
+        [
+            "c++",
+            
+        ],
+
         languages: "C++ | OpenGL",
         skills: "OOP | Frameworks",
         title: "Not Mario - Portfolio Game 1",

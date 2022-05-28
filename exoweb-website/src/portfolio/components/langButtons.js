@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Filter from "./filter"
 import Projects from "./projectHighlight"
 import ProjectDetails from "./projectDetails";
-import FilterButton from "./filterButton";
 
 const allCategories =
     [
@@ -13,8 +12,6 @@ const allCategories =
 function LangButtons()
 {
     const [langPanelOpen, setLangPanelOpen] = useState(false);
-    const [langPanelSelected, setLangPanelSelected] = useState(null);
-    let currentElement = useState(null);
 
     const mainIMG = document.getElementById('details'); // For language large box animation
 
@@ -24,12 +21,6 @@ function LangButtons()
 
     function handleClickEvent(event)
     {
-        if (event.target.className === "lang-button")
-        {
-            OpenLangPanel(event);
-            setLangPanelOpen(true);
-        }
-
         // Close lang panel upon clicking outside 
         if (event.target.className !== "lang-button" && event.target.className !== "lang-panel shown")
         {
@@ -37,7 +28,7 @@ function LangButtons()
             {
                 if (!shownPanel.contains(event.target) && langPanelOpen)
                 {
-                    langPanelSelected.className = 'lang-button';
+                    // langPanelSelected.className = 'lang-button';
                     undoLargeBoxAnim();
                     setLangPanelOpen(false);
                 }
@@ -56,44 +47,6 @@ function LangButtons()
             const filteredData = Projects.filter(item => item.category === button);
             setMenuItem(filteredData);
         }
-    }
-
-    function OpenLangPanel(event)
-    {
-        if (event.target.className.includes('active'))
-        {
-            setTimeout(() =>
-            {
-                setLangPanelOpen(true);
-                undoLargeBoxAnim();
-            }, 50);
-            return;
-        }
-
-        // Remove underline from old lang
-        if (currentElement)
-        {
-            currentElement.className = 'lang-button';
-        }
-        event.target.className = "lang-button active";
-        setLangPanelSelected(event.target);
-
-        setTimeout(() =>
-        {
-            let panel = document.getElementById(event.target.getAttribute('data-panel'));
-            panel.classList.add('shown');
-            mainIMG.classList.remove('shown');
-            setLangPanelOpen(true);
-
-            // Animate all the children
-            let divs = panel.querySelectorAll('.projects>.proj');
-            let timeout = 400;
-            for (let div of divs)
-            {
-                setTimeout(() => div.classList.add('loaded'), timeout);
-                timeout += 50;
-            }
-        }, 50);
     }
 
     function showProjectText(event)
@@ -134,8 +87,8 @@ function LangButtons()
             <div id="Header">
                 <div id="Start">
                     <h2>I'm a software developer that works on</h2>
-                    <FilterButton filterButton={filterButtons} filter={filter} />
-                    <Filter />
+
+                    <Filter filterButton={filterButtons} filter={filter} />
 
                     <div className="copyright">
                         <p>
