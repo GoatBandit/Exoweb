@@ -19,7 +19,6 @@ body
 {
 	margin: 0;
     text-align: center;
-    cursor: pointer;
 	background: rgb(56, 56, 56);
     overflow-x: hidden;
 	overflow-y: auto;
@@ -201,6 +200,7 @@ canvas
         opacity: 0.5;
         transition: all 0.2s;
         z-index: 3;
+        cursor: pointer;
     }
 
         .item-con:hover
@@ -490,4 +490,9 @@ canvas
 											  rgba(0, 0, 0, .2) 75%,
 											  transparent 75%,
 											  transparent)
+  }
+
+  .item-con::-webkit-scrollbar
+  {
+    width: 0px;
   }

@@ -1,4 +1,19 @@
-function Filter({ filterButton, filter })
+import Projects from "./projectHighlight"
+
+const allLangFilter = [...new Set(Projects.map(item => item.langFilter))];
+const languages =
+    [
+        "c#",
+        "cpp",
+        "kotlin",
+        "golang",
+        "reactjs",
+        "javascript",
+        "html/css",
+        "wordpress"
+    ]
+
+function Filter({ categoryButton, filter })
 {
     function checkColour(category)
     {
@@ -56,12 +71,20 @@ function Filter({ filterButton, filter })
         }
     }
 
+    // const allLangFilter = Projects.map(item => item.langFilter);
+    // var booleanArray = new Array(2).fill(false);
+
+    function checkLanguage(index)
+    {
+        return
+    }
+
     return (
         <div id="filter">
             <div>
                 <h2>
                     {
-                        filterButton.map((category, index) => 
+                        categoryButton.map((category) => 
                         {
                             return <>
                                 {category !== "others" ?
@@ -69,13 +92,13 @@ function Filter({ filterButton, filter })
                                         <>
                                             <span>&nbsp;</span>
                                             <span className="lang-button" style={{ "color": checkColour(category) }} data-panel={category}
-                                                type="filterbutton" onClick={() => filter(category)}>
+                                                type="filterbutton" onClick={() => filter(category, "title")}>
                                                 {checkCategory(category)}
                                             </span>
                                         </>
                                         :
                                         <span className="lang-button" style={{ "color": checkColour(category) }} data-panel={category}
-                                            type="filterbutton" onClick={() => filter(category)}>
+                                            type="filterbutton" onClick={() => filter(category, "title")}>
                                             {checkCategory(category)}
                                         </span>
 
@@ -83,7 +106,7 @@ function Filter({ filterButton, filter })
                                     <>
                                         &nbsp;and&nbsp;
                                         <span className="lang-button" style={{ "color": checkColour(category) }} data-panel={category}
-                                            type="filterbutton" onClick={() => filter(category)}>
+                                            type="filterbutton" onClick={() => filter(category, "title")}>
                                             {checkCategory(category)}
                                         </span>
                                     </>
@@ -93,36 +116,46 @@ function Filter({ filterButton, filter })
                     }
                 </h2>
             </div>
+            <div style={{ "fontSize": "larger" }}>I work with the following languages:</div>
             <p style={{ "fontSize": "larger" }}>
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     C#
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     C++
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     Kotlin
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     Go
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     ReactJS
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     JavaScript
                 </span>,&nbsp;
-                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage">
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
                     HTML/CSS
+                </span>,&nbsp;
+                <span className="lang-button" style={{ "color": "#d87777" }} data-panel="specificLanguage"
+                    type="filterbutton">
+                    Wordpress
                 </span>.
             </p>
 
-            <p>
+            {/* <p>
                 Please click on the desired filter.
-            </p>
-
-            {/* <FilterButton /> */}
-        </div>
+            </p> */}
+        </div >
     );
 }
 
