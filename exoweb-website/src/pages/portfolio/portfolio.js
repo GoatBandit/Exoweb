@@ -1,6 +1,7 @@
+import React from "react";
 import "./portfolioCSS.css";
-import Introduction from "./components/introduction";
-import LangButtons from "./components/langButtons";
+import Introduction from "./portfolioComponents/introduction";
+import LangButtons from "./portfolioComponents/langButtons";
 
 function Portfolio()
 {
@@ -12,10 +13,9 @@ function Portfolio()
                     <LangButtons />
                 </div>
                 <div id="bg"></div>
-
             </div>
         </>
-    );
+    )
 }
 
 export default Portfolio;

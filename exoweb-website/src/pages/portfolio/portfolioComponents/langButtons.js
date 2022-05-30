@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Filter from "./filter"
-import Projects from "./projectHighlight"
-import ProjectDetails from "./projectDetails";
+import "../portfolioCSS.css";
+import Filter from "./filter.js"
+import Projects from "./projectHighlight.js"
+import ProjectDetails from "./projectDetails.js";
 
+/* 
+* Primary project sorting categories
+* Linked to langButtons:20
+*/
 const allCategories =
     [
         "all",
@@ -11,29 +16,28 @@ const allCategories =
 
 function LangButtons()
 {
-    const mainIMG = document.getElementById('details'); // For language large box animation
-
+    // Variables used for sorting projects
     const [menuItem, setMenuItem] = useState(Projects);
     const [categoryButtons, setCategoryButtons] = useState(allCategories);
 
+    // Filter projects based on the object pressed
     const filterMenu = (button, type) =>
     {
         if (button === "all")
         {
             setMenuItem(Projects);
         }
-        else if (type == "title")
+        else
         {
             const filteredData = Projects.filter(item => item.category === button);
             setMenuItem(filteredData);
         }
-        else
-        {
-            const filteredData = Projects.filter(item => item.langFilter === button);
-            setMenuItem(filteredData);
-        }
     }
 
+    /* 
+    * Open up additional information about projects.
+    * Linked to langButtons:59 
+    */
     // function showProjectText(event)
     // {
     //     const textBox = document.getElementById('textBox'); // For button information
