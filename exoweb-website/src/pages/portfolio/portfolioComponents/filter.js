@@ -74,10 +74,10 @@ function Filter({ categoryButton, filter })
     // const allLangFilter = Projects.map(item => item.langFilter);
     // var booleanArray = new Array(2).fill(false);
 
-    function checkLanguage(index)
-    {
-        return
-    }
+    // function checkLanguage(index)
+    // {
+    //     return
+    // }
 
     return (
         <div id="filter">
