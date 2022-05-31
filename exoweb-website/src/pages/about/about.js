@@ -1,75 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./aboutCSS.css";
+import CV from "../../assets/documents/cv/cv.pdf";
 
 function About()
 {
-    // // On About Button Click
-    // $('.aboutButton').click(function (e) 
-    // {
-    //     $('.about').fadeIn(500);
-    //     $('.aboutEffect').removeclassName('transform-out').addclassName('transform-in');
-
-    //     e.preventDefault();
-    // });
-
-    function openAbout()
+    function openTab(buttonName)
     {
-        const about = document.querySelector(".about");
-        const aboutEffect = document.querySelector(".aboutEffect");
-
-        setTimeout(() => 
+        if (buttonName === "about")
         {
-            about.style.opacity = 1;
-        }, 500);
-        aboutEffect.classList.remove("transform-out");
-        aboutEffect.classList.add("transform-in");
+            document.querySelector(".about").style.display = "block";
+            document.querySelector(".about").classList.add("transform-in");
+        }
+        else if (buttonName === "work")
+        {
+            document.querySelector(".work").style.display = "block";
+        }
+        else if (buttonName === "store")
+        {
+            document.querySelector(".store").style.display = "block";
+        }
+        else return;
     }
 
+    function closeTab()
+    {
+        const about = document.querySelector(".about");
+        if (about)
+        {
+            about.style.display = "none";
+        }
+        
+        const work = document.querySelector(".work");
+        if (work)
+        {
+            work.style.display = "none";
+        }
+        
+        const store = document.querySelector(".store");
+        if (store)
+        {
+            store.style.display = "none";
+        }
+    }
 
-    // // On About Button Close Click
-    // $('.about .inner .close').click(function (e) 
-    // {
-    //     $('.about').fadeOut(500);
-    //     $('.aboutEffect').removeclassName('transform-in').addclassName('transform-out');
-
-    //     e.preventDefault();
-    // });
-
-    // // On Skills Button Click
-    // $('.skillsButton').click(function (e) 
-    // {
-    //     $('.skills').fadeIn(500);
-    //     $('.skillsEffect').removeclassName('transform-out').addclassName('transform-in');
-
-    //     e.preventDefault();
-    // });
-
-    // // On Skills Button Close Click
-    // $('.skills .inner .close').click(function (e) 
-    // {
-    //     $('.skills').fadeOut(500);
-    //     $('.skillsEffect').removeclassName('transform-in').addclassName('transform-out');
-
-    //     e.preventDefault();
-    // });
-
-    // // On Work Button Click
-    // $('.thirdButton').click(function (e) 
-    // {
-    //     $('.store').fadeIn(500);
-    //     $('.storeEffect').removeclassName('transform-out').addclassName('transform-in');
-
-    //     e.preventDefault();
-    // });
-
-    // // On Work Button Close Click
-    // $('.store .inner .close').click(function (e) 
-    // {
-    //     $('.store').fadeOut(500);
-    //     $('.storeEffect').removeclassName('transform-in').addclassName('transform-out');
-
-    //     e.preventDefault();
-    // });
 
     return (
         <div id="aboutContainer">
@@ -89,25 +62,23 @@ function About()
                     </div>
                 </div>
 
-                <div className="contentShell">
-                    <div className="content">
-                        <p>
-                            I'm <strong>Connor Easterbrook</strong>, also known as <strong>GoatBandit</strong>.
-                            <br /> Check out 'ABOUT' for more information!
-                        </p>
-                    </div>
+                <div className="content">
+                    <p>
+                        I'm <strong>Connor Easterbrook</strong>, also known as <strong>GoatBandit</strong>.
+                        <br /> Check out 'ABOUT' for more information!
+                    </p>
                 </div>
 
                 <div className="buttons">
                     <li><a className="aboutButton">
-                        <p onClick={openAbout}>About</p>
+                        <p onClick={() => openTab("about")}>About</p>
                     </a></li>
                     <li><a className="skillsButton">
-                        <p>Work</p>
+                        <p onClick={() => openTab("work")}>Work</p>
                     </a></li>
-                    <li><a className="thirdButton">
-                        <p>EXOWEB</p>
-                    </a></li>
+                    {/* <li><a className="thirdButton">
+                        <p onClick={() => openTab("store")}>EXOWEB</p>
+                    </a></li> */}
                 </div>
             </div>
 
@@ -139,31 +110,30 @@ function About()
                         improved in the future. My specialities include adaptability to learning new skills and programming languages quickly, problem-solving, responsive design principles, website
                         optimization, communication, and source control.
                     </p>
-                    <a className="aboutClose" href="#"> &times; </a>
+                    <a className="aboutClose" onClick={closeTab}> &times; </a>
                 </div>
 
-                <div className="skills">
+                <div className="work">
                     <h2> Work & Skills </h2>
                     <p>
                         My CV details my employment and educational background while my Portfolio discusses
                         my published work. <br /><br />
                         Please click the button below for your desired documententation:
                     </p>
-                    {/* <button className="cvButton" onClick="window.open('/assets/documents/cv/cv.pdf')"> CV
-                                    </button> */}
-                    {/* <button className="resumeButton" onClick="window.open('/portfolio')"> Portfolio </button> */}
-                    <a className="aboutClose" href="#"> &times; </a>
+                    <button className="cvButton" onClick={() => window.open(CV)}>CV</button>
+                    <button className="resumeButton" onClick={() => window.open('/portfolio')}>PORTFOLIO</button>
+                    <a className="aboutClose" onClick={closeTab}> &times; </a>
                 </div>
 
-                <div className="store">
+                {/* <div className="store">
                     <h2> EXOWEB </h2>
                     <p>
                         EXOWEB is my company. <br />
                         Click the button below for more information.
                     </p>
-                    {/* <button className="storeButton" onClick="window.open('index')"> EXOWEB </button> */}
-                    <a className="aboutClose" href="#"> &times; </a>
-                </div>
+                    <button className="storeButton" onClick="window.open('index')"> EXOWEB </button>
+                    <a className="aboutClose" onClick={closeTab}> &times; </a>
+                </div> */}
             </div>
 
 
