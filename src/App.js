@@ -1,19 +1,20 @@
 import React from "react";
-import Landing from "./pages/landing/landing"
+// import Landing from "./pages/landing/landing"
 import About from "./pages/about/about"
 import Portfolio from "./pages/portfolio/portfolio";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Route, Routes, Navigate } from "react-router-dom"
 
 function App()
 {
   return (
-    <BrowserRouter>
+    <header>
       <Routes>
-        <Route path="/*" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} exact />
+        <Route exact path="/portfolio" element={<Portfolio />} />
+        <Route exact path="/" element={<About />} />
+        <Route path="/*" element={<Navigate replace to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </header>
   );
 }
 

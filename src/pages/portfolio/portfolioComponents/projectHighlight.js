@@ -18,7 +18,7 @@ export default [
 		linkName: "Github",
         github: "https://github.com/GoatBandit/-MGiC-Not-Mario",
         firstImage: "/images/portfolio/games/more_games_cpp_not_mario_menu.JPG",
-        secondImage: "/images/portfolio/games/more_games_cpp_not_mario.JPG",
+        secondImage: "/images/portfolio/games/MGIC-NotMario.gif",
     },
     // "Biohazard":
     {
@@ -31,8 +31,8 @@ export default [
         description: "This project developed C++ programming to include networking with the Kissnet framework. Once again, middleware was used for rendering. The gameplay was similar to the first XCOM game.",
 		linkName: "Github",
         github: "https://github.com/GoatBandit/-MGiC-Biohazard",
-        firstImage: "/images/portfolio/games/more_games_cpp_biohazard.PNG",
-        secondImage: "/images/portfolio/games/more_games_cpp_biohazard_game.JPG",
+        firstImage: "/images/portfolio/games/more_games_cpp_biohazard.png",
+        secondImage: "/images/portfolio/games/MGIC-Biohazard.gif",
     },
     // "Observers":
     {
