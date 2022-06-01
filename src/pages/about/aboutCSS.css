@@ -3,7 +3,7 @@
 @font-face 
 {
     font-family: 'Comfortaa';
-    src: url('/../assets/fonts/Comfortaa.ttf');
+    src: url('../../assets/fonts/Comfortaa.ttf');
 
     font-weight: normal;
     font-style: normal;
@@ -209,37 +209,32 @@ html, body, #aboutContainer
 
                 .buttons li
                 {
+                    display: block;
                     padding-left: 0;
                     border-left: solid 1px #ffffff;
+                    min-width: 7.5rem; max-width: 15rem;
                     text-transform: uppercase;
+                    letter-spacing: 0.1rem;
+                    font-size: 1.0rem;
+                    color: #ffffff;
+                    border-bottom: 0;
+
+                    -webkit-transition: all linear 0.15s;
+                    -moz-transition: all linear 0.15s;
+                    transition: all linear 0.15s;
                 }
 
-                    .buttons li a
-                    {
-                        display: block;
-                        min-width: 7.5rem; max-width: 15rem;
-                        text-transform: uppercase;
-                        letter-spacing: 0.1rem;
-                        font-size: 1.0rem;
-                        color: #ffffff;
-                        border-bottom: 0;
-
-                        -webkit-transition: all linear 0.15s;
-                        -moz-transition: all linear 0.15s;
-                        transition: all linear 0.15s;
-                    }
-
-                        .buttons li a:hover 
+                        .buttons li:hover 
                         {
                             background-color: rgba(255, 255, 255, 0.075);
                         }
 
-                        .buttons li a:active 
+                        .buttons li:active 
                         {
                             background-color: rgba(255, 255, 255, 0.175);
                         }
 
-                        .buttons li a p
+                        .buttons li p
                         {
                             margin: inherit;
                             padding: 20px;

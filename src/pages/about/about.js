@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./aboutCSS.css";
 import CV from "../../assets/documents/cv/cv.pdf";
+import { Link } from "react-router-dom";
 
 function About()
 {
@@ -29,13 +30,13 @@ function About()
         {
             about.style.display = "none";
         }
-        
+
         const work = document.querySelector(".work");
         if (work)
         {
             work.style.display = "none";
         }
-        
+
         const store = document.querySelector(".store");
         if (store)
         {
@@ -49,7 +50,7 @@ function About()
             <div id="header">
 
                 <div className="mainPic">
-                    <img className="circleImage" alt="Front Image" src="/goatLogo.png" />
+                    <img className="circleImage" alt="FrontPicture" src="/goatLogo.png" />
                     <div className="circleText">
                         <p>
                             <br />
@@ -70,15 +71,15 @@ function About()
                 </div>
 
                 <div className="buttons">
-                    <li><a className="aboutButton">
+                    <li>
                         <p onClick={() => openTab("about")}>About</p>
-                    </a></li>
-                    <li><a className="skillsButton">
+                    </li>
+                    <li>
                         <p onClick={() => openTab("work")}>Work</p>
-                    </a></li>
-                    {/* <li><a className="thirdButton">
+                    </li>
+                    {/* <li>
                         <p onClick={() => openTab("store")}>EXOWEB</p>
-                    </a></li> */}
+                    </li> */}
                 </div>
             </div>
 
@@ -110,7 +111,7 @@ function About()
                         improved in the future. My specialities include adaptability to learning new skills and programming languages quickly, problem-solving, responsive design principles, website
                         optimization, communication, and source control.
                     </p>
-                    <a className="aboutClose" onClick={closeTab}> &times; </a>
+                    <span className="aboutClose" onClick={closeTab}> &times; </span>
                 </div>
 
                 <div className="work">
@@ -121,8 +122,13 @@ function About()
                         Please click the button below for your desired documententation:
                     </p>
                     <button className="cvButton" onClick={() => window.open(CV)}>CV</button>
-                    <button className="resumeButton" onClick={() => window.open('/portfolio')}>PORTFOLIO</button>
-                    <a className="aboutClose" onClick={closeTab}> &times; </a>
+                    {/* <button className="resumeButton" onClick={() => window.open('/portfolio')}>PORTFOLIO</button> */}
+                    <Link to="/portfolio">
+                        <button className="resumeButton"
+                        // onClick={() => window.open('/portfolio')}
+                        >PORTFOLIO</button>
+                    </Link>
+                    <span className="aboutClose" onClick={closeTab}> &times; </span>
                 </div>
 
                 {/* <div className="store">
