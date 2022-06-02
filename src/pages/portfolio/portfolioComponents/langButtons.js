@@ -59,9 +59,9 @@ function LangButtons()
                     <div id="details">
                         <div className="table">
                             {
-                                menuItem.map((item) =>
+                                menuItem.map((item, index) =>
                                 {
-                                    return <div className="item-con" id={item.category} key={item.id}>
+                                    return <div className="item-con" id={item.category} key={index}>
                                         {/* onClick={showProjectText}> */}
                                         <div className="item-container" data-cat={item.category}>
                                             <img src={item.firstImage} alt=""
@@ -72,7 +72,9 @@ function LangButtons()
                                             <h3>{item.title}</h3>
                                             <p>{item.description}</p>
                                             {item.github && (
-                                                <a className="ref" href={item.github} target={item.github}>{item.linkName}</a>
+                                                <span className="ref" onClick={() => window.open(item.github)}>
+                                                    {item.linkName}
+                                                </span>
                                             )}
                                         </div>
 

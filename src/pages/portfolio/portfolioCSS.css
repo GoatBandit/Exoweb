@@ -183,6 +183,7 @@ canvas
       
     .item-con 
     {
+        position: relative;
         min-width: 350px;
         max-width: 350px;
         min-height: 450px;
@@ -190,6 +191,7 @@ canvas
         margin-left: 55px;
         margin-right: 55px;
         margin-bottom: 100px;
+        justify-content: center;
         overflow: hidden;
         overflow-y: visible;
         text-align: center;
@@ -240,8 +242,10 @@ canvas
 
         .item-con .tip
         {
-            margin: 5px;
-            word-spacing: 5px;
+            margin-top: 1px;
+            margin-bottom: 0px;
+            color: gray;
+            font-size: smaller;
             transition: all 0.2s;
         }
     
@@ -253,8 +257,8 @@ canvas
 
         .item-con h3
         {
-            margin-top: 10px;
-            margin-bottom: 5px;
+            margin-top: 5px;
+            margin-bottom: 2px;
             font-size: 17px;
         }
 
@@ -267,14 +271,16 @@ canvas
 
         .item-con .ref
         {
+            position: absolute;
             margin-top: 20px;
-            text-decoration: none;
+            top: 87.5%;
+            transform: translate(-50%, 0%);
             transition: all 0.2s;
         }
 
             .item-con .ref:hover
             {
-                transform: scale(1.4);
+                font-size: larger;
                 color: #e48080;
             }
 
