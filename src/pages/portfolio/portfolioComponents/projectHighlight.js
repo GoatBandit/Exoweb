@@ -1,4 +1,8 @@
 export default [
+/* About textbox needs uncapped height and width
+portfolio horizontal overflow
+portfolio background not fully following mobile scrolling */
+
     //* GAMES
 
     // ASGE (UNIVERSITY)
