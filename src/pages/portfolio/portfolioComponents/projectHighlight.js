@@ -123,12 +123,12 @@ portfolio background not fully following mobile scrolling */
 
         languages: "ReactJS | HTML5/CSS",
         skills: "Data validation",
-        title: "Bandit",
-        description: "This application works as an invoice creator. The intention is to allow for a fully private experience with different templates.",
+        title: "Plandit",
+        description: "W.I.P. A planning app using Electron.NET and Blazor for C# backend with web-development front-end.",
 		// linkName: "Source code",
         // github: "https://github.com/GoatBandit/Bandit",
-        firstImage: "/images/portfolio/web/thisWebsite.JPG",
-        secondImage: "/images/portfolio/web/thisWebsite.JPG"
+        firstImage: "/goatLogo.png",
+        secondImage: "/goatLogo.png",
     },
 
     // "ASOT":
